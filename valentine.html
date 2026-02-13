@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for u ♡</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fdf6f0;
+            font-family: 'Crimson Text', serif;
+            color: #2d1f1f;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .header-bar {
+            background: #fff;
+            padding: 12px 20px;
+            border-bottom: 1px solid #f0e6e0;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: #8b7d77;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 50px 30px;
+        }
+
+        .title-section {
+            text-align: center;
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #f0d9d1;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 400;
+            color: #c9a0a0;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #a08c8c;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 50px;
+            color: #4a3838;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .photo-item {
+            position: relative;
+        }
+
+        .photo-label {
+            font-size: 14px;
+            color: #8b7d77;
+            margin-bottom: 10px;
+            text-transform: lowercase;
+            letter-spacing: 0.5px;
+        }
+
+        .photo-box {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background: #fff;
+            border: 1.5px solid #e8d5d0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .photo-caption {
+            margin-top: 8px;
+            font-size: 15px;
+            color: #6b5858;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #f0d9d1 50%, transparent);
+            margin: 50px 0;
+        }
+
+        .code-block {
+            background: #2b2424;
+            padding: 30px;
+            margin: 40px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.9;
+            color: #e8d5d0;
+            border-left: 3px solid #c9a0a0;
+        }
+
+        .code-comment {
+            color: #a08c8c;
+            font-style: italic;
+        }
+
+        .code-keyword {
+            color: #e8b4b4;
+        }
+
+        .code-string {
+            color: #d4a5a5;
+        }
+
+        .love-note {
+            background: #fff;
+            padding: 35px;
+            margin: 40px 0;
+            border: 1px solid #f0d9d1;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(201, 160, 160, 0.08);
+        }
+
+        .love-note p {
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            color: #4a3838;
+        }
+
+        .hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 36px;
+            opacity: 0;
+            animation: rain-down 3.5s ease-in forwards;
+            color: #ff1a75;
+            pointer-events: none;
+            font-weight: bold;
+            text-shadow: 0 3px 8px rgba(255, 26, 117, 0.5), 0 0 15px rgba(255, 26, 117, 0.3);
+            filter: drop-shadow(0 0 5px rgba(255, 26, 117, 0.4));
+        }
+
+        @keyframes rain-down {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px) rotate(0deg) scale(0);
+            }
+            10% {
+                opacity: 0.95;
+                transform: translateY(0) rotate(0deg) scale(1.3);
+            }
+            90% {
+                opacity: 0.9;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(100vh) rotate(360deg) scale(1.1);
+            }
+        }
+
+        .floating-heart.gentle {
+            animation: gentle-fall 4s ease-in-out forwards;
+            font-size: 30px;
+        }
+
+        @keyframes gentle-fall {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px) translateX(0) rotate(0deg);
+            }
+            15% {
+                opacity: 0.95;
+            }
+            85% {
+                opacity: 0.9;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(100vh) translateX(30px) rotate(180deg);
+            }
+        }
+
+        .cta-button {
+            display: block;
+            margin: 40px auto;
+            padding: 16px 50px;
+            background: #c9a0a0;
+            color: #fff;
+            border: none;
+            font-family: 'Crimson Text', serif;
+            font-size: 17px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 3px 12px rgba(201, 160, 160, 0.25);
+        }
+
+        .cta-button:hover {
+            background: #b88f8f;
+            box-shadow: 0 5px 18px rgba(201, 160, 160, 0.35);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #f0d9d1;
+            font-size: 13px;
+            color: #a08c8c;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 650px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .container {
+                padding: 30px 20px;
+            }
+
+            .intro-text {
+                font-size: 16px;
+            }
+
+            .code-block {
+                padding: 20px;
+                font-size: 12px;
+            }
+
+            .love-note {
+                padding: 25px 20px;
+            }
+
+            .love-note p {
+                font-size: 16px;
+            }
+
+            .cta-button {
+                padding: 14px 40px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 32px;
+                letter-spacing: 1px;
+            }
+
+            .container {
+                padding: 25px 15px;
+            }
+
+            .header-bar {
+                font-size: 10px;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts-container" id="heartsContainer"></div>
+    
+    <div class="header-bar">
+        ~/Documents/valentine_2025/index.html
+    </div>
+
+    <div class="container">
+        <div class="title-section">
+            <h1>For You ♡</h1>
+            <div class="subtitle">happy valentine's day</div>
+        </div>
+
+        <div class="intro-text">
+            <p>I spent some time making this for you. I wanted to create something that shows how much you mean to me, so I combined my love for coding with my love for you.</p>
+        </div>
+
+        <div class="photo-grid">
+            <div class="photo-item">
+                <div class="photo-label">us ♡</div>
+                <div class="photo-box">
+                    <img src="/images/photo1.jpg" alt="us together">
+                </div>
+                <div class="photo-caption">my favorite person</div>
+            </div>
+
+            <div class="photo-item">
+                <div class="photo-label">you ♡</div>
+                <div class="photo-box">
+                    <img src="/images/photo2.jpg" alt="you">
+                </div>
+                <div class="photo-caption">super duper ganda na love ko!</div>
+            </div>
+
+            <div class="photo-item">
+                <div class="photo-label">me ♡</div>
+                <div class="photo-box">
+                    <img src="/images/photo3.jpg" alt="me">
+                </div>
+                <div class="photo-caption">mabangong boyfriend mo!</div>
+            </div>
+
+            <div class="photo-item">
+                <div class="photo-label">together ♡</div>
+                <div class="photo-box">
+                    <img src="/images/photo4.jpg" alt="together">
+                </div>
+                <div class="photo-caption">MISS NA KITA SOBRAA!</div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="code-block">
+<span class="code-comment">// trying to express this in code...</span>
+
+<span class="code-keyword">const</span> us = {
+    her: <span class="code-string">"perfect"</span>,
+    me: <span class="code-string">"lucky"</span>,
+    together: <span class="code-string">"forever"</span>
+};
+
+<span class="code-keyword">function</span> myLove() {
+    <span class="code-keyword">while</span> (true) {
+        thinkAboutYou();
+        feelGrateful();
+        keepLovingYou();
+    }
+}
+
+<span class="code-comment">// this runs forever ♡</span>
+        </div>
+
+        <div class="love-note">
+            <p>I'm not always great with words, but I want you to know that you make everything better.</p>
+            <p>Thank you for being you, for being patient with me, and for making me happier than I ever thought I could be.</p>
+            <p>I love you so much.</p>
+        </div>
+
+        <button class="cta-button" onclick="triggerHearts()">♡</button>
+
+        <div class="footer">
+            made with love · february 2025
+        </div>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            heart.innerHTML = '♡';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 20 + 32) + 'px';
+            
+            const colors = ['#ff1a75', '#ff3385', '#ff0066', '#ff5599', '#ff1a8c'];
+            heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+            
+            const duration = Math.random() * 1.5 + 2.5;
+            heart.style.animationDuration = duration + 's';
+            
+            document.getElementById('heartsContainer').appendChild(heart);
+            
+            setTimeout(() => heart.remove(), duration * 1000);
+        }
+
+        function createGentleHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart gentle';
+            heart.innerHTML = '♡';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 15 + 26) + 'px';
+            
+            const colors = ['#ff1a75', '#ff3385', '#ff5599'];
+            heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+            
+            document.getElementById('heartsContainer').appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 4000);
+        }
+
+        function triggerHearts() {
+            // create waves of raining hearts
+            for (let wave = 0; wave < 3; wave++) {
+                setTimeout(() => {
+                    for (let i = 0; i < 15; i++) {
+                        setTimeout(() => createHeart(), i * 100);
+                    }
+                }, wave * 800);
+            }
+        }
+
+        // random gentle hearts occasionally
+        setInterval(() => {
+            if (Math.random() > 0.85) {
+                createGentleHeart();
+            }
+        }, 3000);
+
+        // some hearts on load
+        window.addEventListener('load', () => {
+            setTimeout(createGentleHeart, 500);
+            setTimeout(createGentleHeart, 1200);
+            setTimeout(createGentleHeart, 2000);
+        });
+    </script>
+</body>
+</html>
