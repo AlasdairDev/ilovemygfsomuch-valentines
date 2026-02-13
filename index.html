@@ -75,6 +75,35 @@
 
         .photo-item {
             position: relative;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .photo-item:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .photo-item:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .photo-item:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .photo-item:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .photo-label {
@@ -88,7 +117,7 @@
         .photo-box {
             width: 100%;
             aspect-ratio: 1 / 1;
-            background: #fff;
+            background: #f5f5f5;
             border: 1.5px solid #e8d5d0;
             position: relative;
             overflow: hidden;
@@ -99,6 +128,12 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .photo-box img.loaded {
+            opacity: 1;
         }
 
         .photo-caption {
@@ -305,7 +340,7 @@
     <div class="hearts-container" id="heartsContainer"></div>
     
     <div class="header-bar">
-        ~/Documents/valentine_2025/index.html
+        ~/Documents/valentine_2026/index.html
     </div>
 
     <div class="container">
@@ -322,7 +357,7 @@
             <div class="photo-item">
                 <div class="photo-label">us ♡</div>
                 <div class="photo-box">
-                    <img src="images/photo1.jpg" alt="us together">
+                    <img src="images/photo1.jpg" alt="us together" onload="this.classList.add('loaded')">
                 </div>
                 <div class="photo-caption">my favorite person</div>
             </div>
@@ -330,7 +365,7 @@
             <div class="photo-item">
                 <div class="photo-label">you ♡</div>
                 <div class="photo-box">
-                    <img src="images/photo2.jpg" alt="you">
+                    <img src="images/photo2.jpg" alt="you" onload="this.classList.add('loaded')">
                 </div>
                 <div class="photo-caption">super duper ganda na love ko!</div>
             </div>
@@ -338,7 +373,7 @@
             <div class="photo-item">
                 <div class="photo-label">me ♡</div>
                 <div class="photo-box">
-                    <img src="images/photo3.jpg" alt="me">
+                    <img src="images/photo3.jpg" alt="me" onload="this.classList.add('loaded')">
                 </div>
                 <div class="photo-caption">mabangong boyfriend mo!</div>
             </div>
@@ -346,7 +381,7 @@
             <div class="photo-item">
                 <div class="photo-label">together ♡</div>
                 <div class="photo-box">
-                    <img src="images/photo4.jpg" alt="together">
+                    <img src="images/photo4.jpg" alt="together" onload="this.classList.add('loaded')">
                 </div>
                 <div class="photo-caption">MISS NA KITA SOBRAA!</div>
             </div>
@@ -375,7 +410,7 @@
         </div>
 
         <div class="love-note">
-            <p>Salamat sa pagiging space safe ko. You are my home miss na miss na kita love kong maacm na mabantot.</p>
+            <p>Salamat sa pagiging safe space ko. You are my home miss na miss na kita love kong maacm na mabantot.</p>
             <p>Thank you for being you, for being patient with me, and for making me happier than I ever thought I could be.</p>
             <p>I love you so much mahal kong sobrang sobrang ganda!!!</p>
         </div>
